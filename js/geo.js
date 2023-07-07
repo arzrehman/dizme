@@ -24,8 +24,30 @@ if (navigator.geolocation) {
         } else if (countryCode === 'PK') {
           window.location.href = '/pk.html';
         }
+        else {
+            // Redirect to the main index page
+            window.location.href = '/index.html';
+          }
       }
     };
   
     xhr.send();
   }
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+  } else {
+    // Geolocation is not supported
+    // Handle the scenario accordingly (e.g., display a default page)
+  }
+  
+  function successCallback(position) {
+    // Your existing code to handle the successful geolocation retrieval
+    // ...
+  }
+  
+  function errorCallback(error) {
+    // Handle the scenario when the user denies access to their location
+    // Redirect the user to a default page or display a message
+    // ...
+  }
+  
