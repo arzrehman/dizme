@@ -24,10 +24,6 @@ if (navigator.geolocation) {
         } else if (countryCode === 'PK') {
           window.location.href = '/pk.html';
         }
-        else {
-            // Redirect to the main index page
-            window.location.href = '/index.html';
-          }
       }
     };
   
