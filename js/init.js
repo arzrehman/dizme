@@ -213,60 +213,7 @@ function dizme_tm_modalbox_portfolio(){
 
 // filterable 
 
-function dizme_tm_portfolio(){
 
-	"use strict";
-
-	if(jQuery().isotope) {
-
-		// Needed variables
-		var filter		 = jQuery('.dizme_tm_portfolio .portfolio_filter ul');
-
-		if(filter.length){
-			// Isotope Filter 
-			filter.find('a').on('click', function(){
-				var element		= jQuery(this);
-				var selector 	= element.attr('data-filter');
-				var list		= element.closest('.dizme_tm_portfolio').find('.portfolio_list').children('ul');
-				list.isotope({ 
-					filter				: selector,
-					animationOptions	: {
-						duration			: 750,
-						easing				: 'linear',
-						queue				: false
-					}
-				});
-				
-				filter.find('a').removeClass('current');
-				element.addClass('current');
-				return false;
-			});	
-		}
-	}
-}
-
-function dizme_tm_projects(){
-	
-	"use strict";
-	
-	jQuery('.dizme_tm_portfolio_animation_wrap').each(function() {
-		jQuery(this).on('mouseenter', function() {
-			if (jQuery(this).data('title')) {
-				jQuery('.dizme_tm_portfolio_titles').html(jQuery(this).data('title') + '<span class="work__cat">' + jQuery(this).data('category') + '</span>');
-				jQuery('.dizme_tm_portfolio_titles').addClass('visible');
-			}
-
-			jQuery(document).on('mousemove', function(e) {
-				jQuery('.dizme_tm_portfolio_titles').css({
-					left: e.clientX - 10,
-					top: e.clientY + 25
-				});
-			});
-		}).on('mouseleave', function() {
-			jQuery('.dizme_tm_portfolio_titles').removeClass('visible');
-		});
-	});
-}
 
 // -------------------------------------------------
 // -------------  PROGRESS BAR  --------------------
